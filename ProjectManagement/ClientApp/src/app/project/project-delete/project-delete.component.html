@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 well">
+
+      <div class="row">
+        <div class="col-md-2">
+          <label for="name" class="control-label">Project name:</label>
+        </div>
+        <div class="col-md-10">
+          <span name="name">
+            {{project?.name}}
+          </span>
+        </div>
+      </div>
+       
+      <div class="row">
+        <div class="col-md-2">
+          <label for="status" class="control-label">Status:</label>
+        </div>
+        <div class="col-md-10">
+          <span name="status">
+           {{project?.status}}
+          </span>
+        </div>
+      </div>
+       
+      <div class="row">
+        <div class="col-md-2">
+          <label for="priority" class="control-label">Priority:</label>
+        </div>
+        <div class="col-md-10">
+          <span name="priority">
+            {{project?.priority}}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-offset-8 col-md-1">
+        <button type="submit" class="btn btn-info" (click)="deleteProject()">Delete</button>
+      </div>
+      <div class="col-md-1">
+        <button type="button" class="btn btn-danger" (click)="redirectToProjectList()">Cancel</button>
+      </div>
+    </div>
+</div>
+
+<app-success-modal [modalHeaderText]="'Success message'" 
+  [modalBodyText]="'Action completed successfully'" 
+  [okButtonText]="'OK'"
+  (redirectOnOK)="redirectToProjectList()"></app-success-modal>
+ 
+<app-error-modal [modalHeaderText]="'Error message'" 
+  [modalBodyText]="errorMessage" 
+  [okButtonText]="'OK'"></app-error-modal>

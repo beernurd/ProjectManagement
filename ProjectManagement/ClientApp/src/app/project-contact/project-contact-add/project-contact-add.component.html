@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="col-md-10 text-right">
+    <mark *ngIf="noContact && hasInitialContact">Please add a contact!</mark>
+  </div>
+  <div class="btn-group">
+    <button id="add" (click)="addContacts()">Add</button>
+    <button id="back" (click)="redirectToProjectList()">Back</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th >
+              <input type="checkbox" *ngIf="selectAllChk" [(ngModel)]="selectedAll" (change)="selectAll()">
+            </th>
+            <th>Contact name</th>
+            <th>Contact email</th>
+            <th>Contact address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let selectedContact of selectedContacts">
+            <td>
+              <input type="checkbox" [(ngModel)]="selectedContact.selected" (change)="checkIfAllSelected()">
+            </td>
+            <td>{{selectedContact.name}}</td>
+            <td>{{selectedContact.email}}</td>
+            <td>{{selectedContact.address}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-success-modal [modalHeaderText]="'Success message'"
+                   [modalBodyText]="'Action completed successfully'"
+                   [okButtonText]="'OK'"
+                   (redirectOnOK)="redirectToProjectList()"></app-success-modal>
+
+<app-error-modal [modalHeaderText]="'Error message'"
+                 [modalBodyText]="errorMessage"
+                 [okButtonText]="'OK'"></app-error-modal>

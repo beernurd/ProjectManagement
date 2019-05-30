@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <button id="create" class="btn btn-success" (click)="redirectToCreatePage()">Create contact</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Contact name</th>
+            <th>Contact email</th>
+            <th>Contact address</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.address}}</td>
+            <td>
+              <button type="button" id="details" class="btn btn-default" (click)="getContactDetails(contact.id)">Details</button>
+            </td>
+            <td>
+              <button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(contact.id)">Update</button>
+            </td>
+            <td>
+              <button type="button" id="delete" class="btn btn-danger" (click)="redirectToDeletePage(contact.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <button id="back" class="btn btn-success" (click)="redirectToContactList()">Back</button>
+  </div>
+</div>
+<br>
+<div class="well">
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Contact name:</strong>
+    </div>
+    <div class="col-md-3">
+      {{contact?.name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Email:</strong>
+    </div>
+    <div class="col-md-3">
+      {{contact?.email}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Address:</strong>
+    </div>
+    <div class="col-md-3">
+      {{contact?.address}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active" 
+          [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a [routerLink]="['/contact/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Manage Contacts</a>
+      </li>
+      <li>
+        <a [routerLink]="['/project/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Manage Projects</a>
+      </li>
+      <li>
+        <a [routerLink]="['/project-contact/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Manage Project Contacts</a>
+      </li>
+    </ul>
+  </div>
+</nav>

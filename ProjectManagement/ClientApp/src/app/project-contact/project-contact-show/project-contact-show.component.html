@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <button id="back" class="btn btn-success" (click)="redirectToProjectList()">Back</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Contact name</th>
+            <th>Contact email</th>
+            <th>Contact address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.address}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

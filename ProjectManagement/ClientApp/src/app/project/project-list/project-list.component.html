@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <button id="create" class="btn btn-success" (click)="redirectToCreatePage()">Create project</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Project name</th>
+            <th>Project status</th>
+            <th>Project priority</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>{{project.name}}</td>
+            <td>{{project.status}}</td>
+            <td>{{project.priority}}</td>
+            <td>
+              <button type="button" id="details" class="btn btn-default" (click)="getProjectDetails(project.id)">Details</button>
+            </td>
+            <td>
+              <button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(project.id)">Update</button>
+            </td>
+            <td>
+              <button type="button" id="delete" class="btn btn-danger" (click)="redirectToDeletePage(project.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
